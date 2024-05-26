@@ -64,7 +64,7 @@ function handleNumber(value) {
 
 function handleSymbol(value) {
   switch (value) {
-    case "C": 
+    case "AC": 
       buffer = 0;
       textBuffer = "0";
       bufferLoaded = false;
@@ -159,7 +159,7 @@ function flushOperation(intBuffer) {
   } else if (previousOperator === "÷") {
     runningTotal /= intBuffer;
   } else {
-    alert("Erro na função flushOperation, operador inválido.");
+    alert("ERREUR OPERATION INVALIDE.");
   }
 }
 
