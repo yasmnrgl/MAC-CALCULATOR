@@ -99,6 +99,7 @@ function handleSymbol(value) {
     case "x":
     case "+":
     case "–":
+    case"%":
       handleMath(value);
       break;
   }
@@ -114,6 +115,7 @@ function handleDecimal() {
         case "x":
         case "+":
         case "–":
+        case"%":
           textBuffer += "0,";
           break;
         default:
@@ -158,6 +160,8 @@ function flushOperation(intBuffer) {
     runningTotal *= intBuffer;
   } else if (previousOperator === "÷") {
     runningTotal /= intBuffer;
+  }else if(previousOperator === "%") {
+    runningTotal %= intBuffer;
   } else {
     alert("ERREUR OPERATION INVALIDE.");
   }
